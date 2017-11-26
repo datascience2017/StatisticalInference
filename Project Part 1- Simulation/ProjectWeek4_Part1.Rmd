@@ -1,8 +1,8 @@
 ---
 title: "Simulation Exercise_Statistical Inference Project_Part 1"
 output:
-  md_document:
-    variant: markdown_github
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE, message=FALSE,warning=FALSE,echo=TRUE,cache=TRUE}
@@ -12,7 +12,7 @@ library(knitr)
 ```
 
 ##### Overview: 
-The xponential distribution can be simulated in R with rexp(n, lambda) where lambda is the rate parameter. 
+The Exponential distribution can be simulated in R with rexp(n, lambda) where lambda is the rate parameter. 
 The purpose of this data analysis is to investigate the exponential distribution and compare it to the Central Limit Theorem. 
 For this study, lambda will be set = 0.2 for all simulations.
 The mean of exponential distribution is 1/lambda and the standard deviation is also 1/lambda.
@@ -39,7 +39,7 @@ newdata_average <- rowMeans(newdata)
 
 ####Sample Mean versus Theoretical Mean: 
 Show the sample mean and compare it to the theoretical mean of the distribution.
-```{r}
+```{r, fig.height=5}
 SampleMean <- mean(newdata_average)
 hist(newdata_average,col="gray", main="Histogram of Sample Mean",adj = 0.5)
 paste('Sample mean is', round(SampleMean,3))
@@ -50,8 +50,6 @@ paste('The Theoretical Mean is', round(TheoreticalMean,3))
 ```
 
 ####Based on the values of the Sample Mean and Theoretical Mean, we can say that both means are very close.
-
-
 
 
 #### Sample Variance versus Theoretical Variance: 
